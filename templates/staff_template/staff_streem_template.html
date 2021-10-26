@@ -1,0 +1,20 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}View Results{% endblock page_title %}
+{% block title %}View Results{% endblock title %}
+
+{% block content %}
+
+
+<ul>
+    {% for streem_name in streem_names %} 
+    <li>
+       <a href="/staff_views_result/{{streem_name.id}}">{{streem_name.streem_name}}</a> 
+    </li>
+    {% endfor %}
+</ul>
+    
+
+
+
+
+{% endblock content %}

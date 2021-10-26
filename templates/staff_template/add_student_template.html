@@ -1,0 +1,21 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}Add Students{% endblock page_title %}
+{% block title %}Add student{% endblock title %}
+
+{% block content %}
+
+    <div class="col-6 mx-auto">
+            <div class="card card-primary">
+
+
+            <div class="card-header">
+                <h3 class="card-title">Add student </h3>
+            </div>
+        
+            {% url 'staff_add_student_save' as action_path %}
+            {% include "hod_template/form_template.html" with messages=messages form=form action_path=action_path button_text="Add Student" %}
+
+            </div> 
+    </div>
+
+{% endblock content %}

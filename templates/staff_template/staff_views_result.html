@@ -1,0 +1,22 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}View Results{% endblock page_title %}
+{% block title %}View Results{% endblock title %}
+
+{% block content %}
+
+
+<ul>
+    {% for student_name in student_names %} 
+    <li>
+        {{student_name.admin.first_name}}
+    </li>
+    {% endfor %}
+</ul>
+    
+
+
+
+
+{% endblock content %}
+
+

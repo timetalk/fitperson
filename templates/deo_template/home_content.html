@@ -1,0 +1,65 @@
+{% extends 'deo_template/base_template.html' %}
+{% block page_title %}Home{% endblock page_title %}
+{% block content %}
+{% load static %}
+
+
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+       <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{student_count}}</h3>
+
+                <p>Total Number of Students</p>
+              </div>
+              <a href="{% url 'manage_all_student' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{staff_count}}<sup style="font-size: 20px"></sup></h3>
+
+                <p>Total Number of Staffs</p>
+              </div>
+              <a href="{% url 'manage_all_staff' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{fit_person_count}}</h3>
+
+                <p>Total Number of fit person</p>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>{{father_house_count}}</h3>
+                <p>Total Number of Father Houses</p>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+{% endblock content %}
+

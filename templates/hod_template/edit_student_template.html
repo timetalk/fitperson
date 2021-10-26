@@ -1,0 +1,21 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}Edit Students {{ student.admin.first_name}}  {{ student.admin.last_name}}{% endblock page_title %}
+{% block title %}edit student{% endblock title %}
+
+{% block content %}
+
+    <div class="col-6 mx-auto">
+            <div class="card card-primary">
+
+
+                        <div class="card-header">
+                            <h3 class="card-title">Edit student </h3>
+                        </div>
+
+                      
+                    {% url 'edit_student_save' as action_path %}
+                    {% include "hod_template/form_template.html" with messages=messages form=form action_path=action_path button_text="edit Student" %}
+            </div> 
+    </div>
+
+{% endblock content %}

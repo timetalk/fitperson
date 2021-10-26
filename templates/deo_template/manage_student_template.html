@@ -1,0 +1,46 @@
+{% extends 'deo_template/base_template.html' %}
+{% block page_title %}Manage Student{% endblock page_title %}
+{% block title %}Manage Student{% endblock title %}
+
+{% block content %}
+
+<div class="col-10 mx-auto">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+            <thead>
+            <tr>
+                <th>NO</th>
+                <th>Student Name</th>
+                <th>gender</th>
+                <th>Address</th>
+                <th>Profile Image</th>
+                <th>Class</th>
+                <th>Fit Person</th>
+                <th>Father House Name</th>
+                <th>School</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{student.admin.first_name}} {{student.admin.last_name}}</td>
+                    <td>{{student.gender}}</td>
+                    <td>{{student.address}}</td>
+                    <td><img src="{{student.profile_pic}}" style="width: 50px; height: 50px; border-radius: 100%;" alt=""></td>
+                    <td>{{student.streem_id.streem_name}}</td>
+                    <td>{{student.fit_person_id.fit_person_name}}</td>
+                    <td>{{student.household_id.father_house_name}}</td>
+                    <td>{{student.school_id.school_name}}</td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+</div>
+
+   
+
+{% endblock content %}
+

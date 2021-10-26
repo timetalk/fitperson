@@ -1,0 +1,71 @@
+
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}Add Father House{% endblock page_title %}
+{% block title %}Add Father House{% endblock title %}
+
+{% block content %}
+
+    <div class="col-6 mx-auto">
+            <div class="card card-primary">
+
+
+                        <div class="card-header">
+                            <h3 class="card-title">Add Student Fit Person </h3>
+                        </div>
+
+                        <div class="row">
+       
+                            {% if messages %}
+                            {% for message in messages  %}
+                            {% if message.tags == 'error' %}
+                              <div class="col-10 mt-3 mx-auto">
+                                <span  class="alert alert-danger d-block text-center" style="width: 100%;">{{ message }}</span>
+                              </div>
+                            {% elif message.tags == 'success' %}
+                                <div class="col-10 mx-auto mt-3">
+                                    <span  class="alert alert-success d-block text-center" style="width: 100%;">{{ message }}</span>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                              
+                            {% endif %}
+                          </div>
+
+                        <form role="form" action="{% url 'house_hold_save' %}" method="POST">
+                            {% csrf_token %}
+
+                          
+                            <div class="card-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Father House Name</label>
+                                <input type="text" class="form-control"  placeholder="Father Name" name="father_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Father House Phone Number</label>
+                                <input type="text" class="form-control"  placeholder="FatherPhone number" name="father_number">
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">House Location(Street/Village)</label>
+                                <input type="text" class="form-control"  placeholder="Fit Person Phone number" name="house_location">
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">House Number</label>
+                                <input type="text" class="form-control"  placeholder="House number" name="house_number">
+                            </div>
+            
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Add School</button>
+                            </div>
+                        </form>
+            </div> 
+    </div>
+
+{% endblock content %}

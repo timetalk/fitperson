@@ -1,0 +1,38 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}Add Subject{% endblock page_title %}
+{% block title %}Manage Courses{% endblock title %}
+
+{% block content %}
+
+<div class="col-10 mx-auto">
+    <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Course Name</th>
+                      <th>Created at</th>
+                      <th>Updated at</th>
+                      <th>Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for course in courses  %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{course.course_name}}</td>
+                      <td>{{course.created_at}}</td>
+                      <td>{{course.updated_at}}</td>
+                      <td><a href="edit_course/{{course.id}}"><button class="btn btn-primary btn-sm">Edit</button></a></td>
+                    </tr>
+                  {% endfor %}
+                    
+                  </tbody>
+                </table>
+              </div>
+</div>
+
+   
+
+{% endblock content %}
+

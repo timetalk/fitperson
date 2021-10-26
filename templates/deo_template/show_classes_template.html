@@ -1,0 +1,26 @@
+{% extends 'deo_template/base_template.html' %}
+{% block page_title %}Class Form{% endblock page_title %}
+{% block title %}School Details{% endblock title %}
+
+{% block content %}
+
+    <div class="col-6 mx-auto">
+
+        
+            <div class="list-group">
+
+                <a href="#" class="list-group-item list-group-item-action active">
+                    School Details
+                </a>
+                
+                {% for class in classes %}
+                        <a href="/show_students/{{school.school_name}}/{{class.id}}" class="list-group-item list-group-item-action">{{class.streem_name}}</a> 
+                {% endfor %}
+            </div>
+
+      
+           
+    </div>
+
+{% endblock content %}
+

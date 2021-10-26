@@ -1,0 +1,52 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}Manage {{schools.school_name}} Staff  {% endblock page_title %}
+{% block title %}Manage staff{% endblock title %}
+
+{% block content %}
+
+<div class="col-10 mx-auto">
+    <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>Last Login</th>
+                      <th>Date Joined</th>
+                      <th>Edit</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for staff in staffs  %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ staff.admin.first_name}}</td>
+                      <td>{{ staff.admin.last_name }}</td>
+                      <td><span class="tag tag-success">{{ staff.admin.username}}</span></td>
+                      <td>{{staff.admin.email}}</td>
+                      <td>{{staff.address}}</td>
+                      <td>{{staff.created_at}}</td>
+                      <td>{{staff.updated_at}}</td>
+
+                     
+                        <td>
+                        <a href="/edit_staff/{{staff.admin.id}}"><button class="btn btn-primary btn-sm">Edit</button></a>
+                        </td>
+                     
+
+                    </tr>
+                 
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+</div>
+
+   
+
+{% endblock content %}
+

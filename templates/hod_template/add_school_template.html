@@ -1,0 +1,53 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}Add School Name{% endblock page_title %}
+{% block title %}Add School Name{% endblock title %}
+
+{% block content %}
+
+    <div class="col-6 mx-auto">
+            <div class="card card-primary">
+
+
+                        <div class="card-header">
+                            <h3 class="card-title">Add School Name </h3>
+                        </div>
+
+                        <div class="row">
+       
+                            {% if messages %}
+                            {% for message in messages  %}
+                            {% if message.tags == 'error' %}
+                              <div class="col-10 mt-3 mx-auto">
+                                <span  class="alert alert-danger d-block text-center" style="width: 100%;">{{ message }}</span>
+                              </div>
+                            {% elif message.tags == 'success' %}
+                                <div class="col-10 mx-auto mt-3">
+                                    <span  class="alert alert-success d-block text-center" style="width: 100%;">{{ message }}</span>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                              
+                            {% endif %}
+                          </div>
+
+                        <form role="form" action="{% url 'add_school_name_save' %}" method="POST">
+                            {% csrf_token %}
+
+                          
+                            <div class="card-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">School Name</label>
+                                <input type="text" class="form-control"  placeholder="Enter School Name" name="school_name">
+                            </div>
+            
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Add School</button>
+                            </div>
+                        </form>
+            </div> 
+    </div>
+
+{% endblock content %}

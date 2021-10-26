@@ -1,0 +1,19 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}School List{% endblock page_title %}
+{% block title %}School List{% endblock title %}
+
+{% block content %}
+
+    <div class="col-12 mx-auto">
+            <div class="card card-primary">
+                <ul>
+                    {% for school in schools %}
+                      <li>
+                        <a href="/staff_school_list_student/{{school.school_name}}">{{school.school_name}}</a>  
+                      </li>
+                    {% endfor %}
+                </ul>
+            </div> 
+    </div>
+
+{% endblock content %}
